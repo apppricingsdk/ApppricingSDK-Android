@@ -12,6 +12,18 @@ Add the following to your app's `build.gradle`:
 dependencies {
     implementation 'com.ondokuzon:apppricing:1.0.0'
 }
+
+settings.gradle {
+    repositories {
+        maven {
+            url = "https://maven.pkg.github.com/apppricingsdk/ApppricingSDK-Android"
+            credentials {
+                username = GITHUB_USER
+                password = GITHUB_TOKEN
+            }
+        }
+    }
+}
 ```
 
 ## Getting Started
