@@ -10,18 +10,13 @@ Add the following to your app's `build.gradle`:
 
 ```gradle
 dependencies {
-    implementation 'com.ondokuzon:apppricing:1.0.0'
+    implementation 'com.github.apppricingsdk:ApppricingSDK-Android:-SNAPSHOT'
 }
 
 settings.gradle {
     repositories {
-        maven {
-            url = "https://maven.pkg.github.com/apppricingsdk/ApppricingSDK-Android"
-            credentials {
-                username = GITHUB_USER
-                password = GITHUB_TOKEN
-            }
-        }
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
     }
 }
 ```
