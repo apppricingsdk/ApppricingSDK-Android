@@ -61,18 +61,12 @@ private fun getPlans() {
             AppPricingInstance.getDevicePlans().collectLatest { response ->
                 when (response) {
                     is AppPricingRepositoryPlansResponse.Error -> {
-                        Log.d("AppPricingRepositoryPlansResponse", "" + response)
                     }
                     AppPricingRepositoryPlansResponse.Idle -> {
-                        Log.d("AppPricingRepositoryPlansResponse", "" + response)
                     }
                     AppPricingRepositoryPlansResponse.Loading -> {
-                        Log.d("AppPricingRepositoryPlansResponse", "" + response)
                     }
                     is AppPricingRepositoryPlansResponse.Success -> {
-                        val name = response.plans.first().name
-                        AppPricingInstance.postPage("FetchPlans: $name")
-                        Log.d("AppPricingRepositoryPlansResponse", "" + response.plans.first().name)
                     }
                 }
             }
